@@ -1,5 +1,4 @@
-// swift-tools-version: 6.1
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version: 5.8
 
 import PackageDescription
 
@@ -11,6 +10,10 @@ let package = Package(
             name: "TruvideoMediaUploadTest",
             targets: ["TruvideoSdkMediaTargets"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/devicekit/DeviceKit.git", from: "5.7.0"),
+        .package(url: "https://github.com/kishikawakatsumi/KeychainAccess.git", from: "4.2.2")
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
@@ -21,6 +24,11 @@ let package = Package(
         ),
         .target(
             name: "TruvideoSdkMediaTargets",
+            dependencies: [
+                .target(name: "TruvideoMediaUploadTest"),
+                .product(name: "DeviceKit", package: "DeviceKit"),
+                .product(name: "KeychainAccess", package: "KeychainAccess")
+            ],
             path: "Sources"
         ),
     ]
