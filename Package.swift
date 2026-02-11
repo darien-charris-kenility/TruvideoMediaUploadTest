@@ -18,7 +18,7 @@ let package = Package(
         ),
         .target(
             name: "TruvideoSdkMediaTargets",
-            dependencies: ["MediaUploadBinary"],
+            dependencies: ["MediaUploadBinary",],
             path: "Sources"
         ),
     ]
