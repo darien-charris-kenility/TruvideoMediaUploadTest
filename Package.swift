@@ -13,7 +13,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "MediaUploadBinary",
-            url: "https://github.com/darien-charris-kenility/TruvideoMediaUploadTest/releases/download/0.1.4/TruvideoMediaUploadTest.xcframework.zip",
+            url: "https://github.com/darien-charris-kenility/TruvideoMediaUploadTest/releases/download/0.1.5/TruvideoMediaUploadTest.xcframework.zip",
             checksum: "95c85403cd91bc44e00685ac4f4fb2d5dfe0e4e590cbe3f1df7bea356a1af19f"
         ),
         .target(
