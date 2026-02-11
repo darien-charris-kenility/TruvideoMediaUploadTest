@@ -10,10 +10,6 @@ let package = Package(
             targets: ["TruvideoSdkMediaTargets"]
         ),
     ],
-    dependencies: [
-        .package(url: "https://github.com/devicekit/DeviceKit.git", from: "5.0.0"),
-        .package(url: "https://github.com/kishikawakatsumi/KeychainAccess.git", from: "4.2.0")
-    ],
     targets: [
         .binaryTarget(
             name: "MediaUploadBinary",
@@ -22,11 +18,7 @@ let package = Package(
         ),
         .target(
             name: "TruvideoSdkMediaTargets",
-            dependencies: [
-                "MediaUploadBinary",
-                .product(name: "DeviceKit", package: "DeviceKit"),
-                .product(name: "KeychainAccess", package: "KeychainAccess")
-            ],
+            dependencies: ["MediaUploadBinary"],
             path: "Sources"
         ),
     ]
